@@ -16,10 +16,16 @@
     border-radius: 8px;
     border-right-width: 5px;
     border-bottom-width: 5px;
+    padding: 15px;
+
 }
 .display{
-    height: 100px;
+    height: 75px;
     border: #24292e 1px solid;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
 
 }
 .grid-container{
@@ -28,9 +34,22 @@
     grid-template-columns: repeat(4, 1fr);
     display: inline-grid;
     grid-template-rows: repeat(5, 1fr);
-    gap: 3px;
+    gap: 3.5px;
+    padding-top: 15px;
 }
 .equals {
     grid-column: 4;
     grid-row: 4 / span 2;
+}
+button{
+    border-style: none;
+    border-radius: 7px;
+}
+button:hover{
+    background-color: #24292e;
+    color: #FAF9F6;
+}
+button:active{
+    background-color: rgb(255, 92, 92);
+    color: #24292e;
 }
