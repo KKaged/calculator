@@ -1,3 +1,6 @@
+const buttons = document.querySelectorAll(`button`);
+const display = document.querySelector(`.display`);
+
 function add(a, b) {
   let result = a + b;
   return result;
@@ -47,4 +50,9 @@ function operate(operator, a, b) {
   return results;
 }
 
-console.log(operate(`*`, 6, 6));
+buttons.forEach((button) => button.addEventListener(`click`, number));
+function number(num) {
+  const num = parseInt(this.value);
+  display.textContent = num;
+  console.log(num);
+}
