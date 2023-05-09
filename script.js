@@ -1,29 +1,26 @@
 const buttons = document.querySelectorAll(`button`);
 const display = document.querySelector(`.display`);
+let previousValue = ``;
 
 function add(a, b) {
   let result = a + b;
   return result;
 }
-console.log(add(1, 1));
 
 function subtract(a, b) {
   let result = a - b;
   return result;
 }
-console.log(subtract(6, 2));
 
 function multiply(a, b) {
   let result = a * b;
   return result;
 }
-console.log(multiply(2, 3));
 
 function divide(a, b) {
-  let result = a / b;
-  return result;
+  previousValue = a;
+  console.log(`I am dividing ${previousValue}`);
 }
-console.log(divide(16, 2));
 
 let a = null;
 let b = null;
@@ -52,7 +49,13 @@ function operate(operator, a, b) {
 
 buttons.forEach((button) => button.addEventListener(`click`, number));
 function number() {
-  const num = parseInt(this.value);
-  display.textContent = num;
-  console.log(num);
+  const num = this.value;
+  const newValue = previousValue + num;
+
+  display.textContent = newValue;
+  previousValue = newValue;
+}
+function clearDisplay() {
+  display.textContent = "";
+  previousValue = "";
 }
