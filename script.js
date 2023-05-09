@@ -51,7 +51,7 @@ function operate(operator, a, b) {
 }
 
 buttons.forEach((button) => button.addEventListener(`click`, number));
-function number(num) {
+function number() {
   const num = parseInt(this.value);
   display.textContent = num;
   console.log(num);
