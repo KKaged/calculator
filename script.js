@@ -1,6 +1,8 @@
-const buttons = document.querySelectorAll(`button`);
+const numberButtons = document.querySelectorAll(`[data-number]`);
 const display = document.querySelector(`.display`);
-let previousValue = ``;
+const operatorButtons = document.querySelectorAll(`[data-operator]`);
+let displayValue = "";
+let inputValue;
 
 function add(a, b) {
   let result = a + b;
@@ -18,8 +20,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  previousValue = a;
-  console.log(`I am dividing ${previousValue}`);
+  let result = a / b;
 }
 
 let a = null;
@@ -47,15 +48,14 @@ function operate(operator, a, b) {
   return results;
 }
 
-buttons.forEach((button) => button.addEventListener(`click`, number));
-function number() {
-  const num = this.value;
-  const newValue = previousValue + num;
-
-  display.textContent = newValue;
-  previousValue = newValue;
+function number(a, b) {
+  let num = this.value;
+  displayValue += num;
+  display.textContent = `${displayValue}`;
+  console.log(typeof displayValue);
 }
 function clearDisplay() {
   display.textContent = "";
-  previousValue = "";
+  displayValue = "";
 }
+numberButtons.forEach((button) => button.addEventListener(`click`, number));
