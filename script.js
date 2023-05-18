@@ -7,19 +7,25 @@ let a;
 let b;
 let operator;
 let result;
-function add(a, b) {
-  let result = a + b;
-  return result;
+function add() {
+  a = parseInt(displayValue);
+  display.textContent = "";
+  displayValue = "";
+  inputValue = display.textContent;
 }
 
-function subtract(a, b) {
-  let result = a - b;
-  return result;
+function subtract() {
+  a = parseInt(displayValue);
+  display.textContent = "";
+  displayValue = "";
+  inputValue = display.textContent;
 }
 
-function multiply(a, b) {
-  let result = a * b;
-  return result;
+function multiply() {
+  a = parseInt(displayValue);
+  display.textContent = "";
+  displayValue = "";
+  inputValue = display.textContent;
 }
 
 function divide() {
@@ -49,6 +55,11 @@ function operate(operator) {
       return divide(a, b);
   }
   return result;
+}
+
+function deleteNum() {
+  displayValue = displayValue.slice(0, -1);
+  display.textContent = displayValue;
 }
 
 function number() {
