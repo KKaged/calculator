@@ -37,7 +37,7 @@ const division = `/`;
 function operate(operator) {
   b = parseInt(displayValue);
   a = Number(a);
-  //b = Number(b);
+  b = Number(b);
   switch (operator) {
     case `+`:
       return add(a, b);
