@@ -2,7 +2,7 @@ const numberButtons = document.querySelectorAll(`[data-number]`);
 const display = document.querySelector(`.display`);
 const operatorButtons = document.querySelectorAll(`[data-operator]`);
 let displayValue = "";
-let inputValue = "";
+let inputValue;
 let a;
 let b;
 let operator;
@@ -22,10 +22,11 @@ function multiply(a, b) {
   return result;
 }
 
-function divide(a, b) {
-  let result = a / b;
+function divide() {
+  a = parseInt(displayValue);
   display.textContent = "";
   displayValue = "";
+  inputValue = display.textContent;
 }
 
 const addition = `+`;
@@ -33,9 +34,10 @@ const subtraction = `-`;
 const multiplication = `*`;
 const division = `/`;
 
-function operate(operator, a, b) {
+function operate(operator) {
+  b = parseInt(displayValue);
   a = Number(a);
-  b = Number(b);
+  //b = Number(b);
   switch (operator) {
     case `+`:
       return add(a, b);
@@ -52,10 +54,7 @@ function operate(operator, a, b) {
 function number() {
   let num = this.value;
   displayValue += num;
-  inputValue = displayValue;
-  display.textContent = inputValue;
-  a = parseInt(inputValue);
-  b = parseInt(displayValue);
+  display.textContent = displayValue;
 }
 function clearDisplay() {
   display.textContent = "";
