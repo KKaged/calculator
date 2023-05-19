@@ -52,18 +52,28 @@ function operate() {
     case `+`:
       result = a + b;
       display.textContent = result;
+      a = result;
+      displayValue = result;
       break;
     case `-`:
       result = a - b;
       display.textContent = result;
+      a = result;
+      displayValue = result;
       break;
     case `*`:
       result = a * b;
       display.textContent = result;
+      a = result;
+      displayValue = result;
       break;
     case `/`:
       result = a / b;
       display.textContent = result;
+      a = result;
+      displayValue = result;
+      console.log(displayValue);
+      b = "";
       break;
   }
 }
@@ -81,5 +91,8 @@ function number() {
 function clearDisplay() {
   display.textContent = "";
   displayValue = "";
+  a = "";
+  b = "";
+  operator = "";
 }
 numberButtons.forEach((button) => button.addEventListener(`click`, number));
