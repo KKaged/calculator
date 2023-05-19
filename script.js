@@ -12,6 +12,7 @@ function add() {
   display.textContent = "";
   displayValue = "";
   inputValue = display.textContent;
+  operator = `+`;
 }
 
 function subtract() {
@@ -19,6 +20,7 @@ function subtract() {
   display.textContent = "";
   displayValue = "";
   inputValue = display.textContent;
+  operator = `-`;
 }
 
 function multiply() {
@@ -26,6 +28,7 @@ function multiply() {
   display.textContent = "";
   displayValue = "";
   inputValue = display.textContent;
+  operator = `*`;
 }
 
 function divide() {
@@ -33,6 +36,7 @@ function divide() {
   display.textContent = "";
   displayValue = "";
   inputValue = display.textContent;
+  operator = `/`;
 }
 
 const addition = `+`;
@@ -40,21 +44,28 @@ const subtraction = `-`;
 const multiplication = `*`;
 const division = `/`;
 
-function operate(operator) {
+function operate() {
   b = parseInt(displayValue);
   a = Number(a);
   b = Number(b);
   switch (operator) {
     case `+`:
-      return add(a, b);
+      result = a + b;
+      display.textContent = result;
+      break;
     case `-`:
-      return subtract(a, b);
+      result = a - b;
+      display.textContent = result;
+      break;
     case `*`:
-      return multiply(a, b);
+      result = a * b;
+      display.textContent = result;
+      break;
     case `/`:
-      return divide(a, b);
+      result = a / b;
+      display.textContent = result;
+      break;
   }
-  return result;
 }
 
 function deleteNum() {
